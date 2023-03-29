@@ -1,5 +1,6 @@
 import unittest
 
+from email import EmailExtractor
 
 class EmailExtractorTestCase(unittest.TestCase):
     def setUp(self) -> None:
@@ -26,8 +27,7 @@ class EmailExtractorTestCase(unittest.TestCase):
         for x in self.data:
             with self.subTest():
                 # given
-                mail = x[0]
-                to
+                email = x[0]
                 is_student = x[1]
                 # then
                 extractor = EmailExtractor(email)
@@ -36,7 +36,6 @@ class EmailExtractorTestCase(unittest.TestCase):
 
     def test_is_male(self):
         for x in self.data:
-            with self.subTest(): to
             with self.subTest():
                 # given
                 email = x[0]
@@ -55,4 +54,4 @@ class EmailExtractorTestCase(unittest.TestCase):
                 # then
                 extractor = EmailExtractor(email)
                 # expect
-                self.assertEqual(surntoame, extractor.get_surname())
+                self.assertEqual(surname, extractor.get_surname())
